@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Task Manager</h1>
+        <div class="features">
+            <div class="search">
+                <input type="text" id="search" placeholder="Search for tasks">
+            </div>
+            <div>
+                <select name="status" id="status" onchange="status()">
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="pending">Pending</option>
+                    <option value="date">Sort by date</option>
+                    <option value="priority">sort by priority</option>
+                </select>
+            </div>
+            <div>
+                <button onclick="DarkMode()" id="dark">Dark Mode</button>
+            </div>
+        </div>
+    </div>
+    <div class="total-tasks">
+            <ul>
+                <li id="total">Total Tasks: 0</li>
+                <li id="complete">Tasks Completed: 0</li>
+                <li id="pending">Tasks Pending: 0</li>
+            </ul>
+    </div>
+    <div class="task-container">
+        
+    </div>
+    <div class="button-container">
+        <button onclick="openPopup()">+</button>
+    </div>
+    <div class="back">
+        <div class="popup-box">
+            <label for="task-name">Task Name:</label>
+            <input type="text" id="task-name" name="task-name">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" rows="3"></textarea>
+            <div class="priority">
+                <ul>
+                    <li><input type="radio" value="high" name="priority"> High</li>
+                    <li><input type="radio" value="medium" name="priority"> Medium</li>
+                    <li><input type="radio" value="low" name="priority" checked> Low</li>
+                </ul>
+            </div>
+            <div class="date">
+                <label for="date">Due Date:</label>
+                <input type="date" id="date" name="date">
+            </div>
+            <div class="popup-button">
+                <button class="add" onclick="addtask()">Add</button>
+                <button class="close" onclick="closePopup()">Close</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
